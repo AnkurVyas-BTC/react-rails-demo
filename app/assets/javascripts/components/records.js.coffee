@@ -1,18 +1,22 @@
 @Records = React.createClass
   getInitialState: ->
+    toastr.info('Welcome User !!!')
     records: @props.data
   getDefaultProps: ->
     records: []
   addRecord: (record) ->
     records = React.addons.update(@state.records, { $push: [record] })
+    toastr.success('Record added successfully!!!')
     @setState records: records
   deleteRecord: (record) ->
     index = @state.records.indexOf record
     records = React.addons.update(@state.records, { $splice: [[index, 1]] })
+    toastr.error('Record deleted successfully!!!')
     @replaceState records: records
   updateRecord: (record, data) ->
     index = @state.records.indexOf record
     records = React.addons.update(@state.records, { $splice: [[index, 1, data]] })
+    toastr.success('Record updated successfully!!!')
     @replaceState records: records
   credits: ->
     credits = @state.records.filter (val) -> val.amount >= 0
@@ -28,9 +32,9 @@
     @debits() + @credits()
   render: ->
     React.DOM.div
-      className: 'records'
+      className: 'records container'
       React.DOM.h2
-        className: 'title'
+        className: 'title text-center'
         'Records'
       React.DOM.div
         className: 'row'

@@ -32,7 +32,7 @@
           value: @state.date
           onChange: @handleChange
       React.DOM.div
-        className: 'form-group'
+        className: 'form-group pad-l10'
         React.DOM.input
           type: 'text'
           className: 'form-control'
@@ -41,7 +41,7 @@
           value: @state.title
           onChange: @handleChange
       React.DOM.div
-        className: 'form-group'
+        className: 'form-group pad-l10'
         React.DOM.input
           type: 'number'
           className: 'form-control'
@@ -49,8 +49,10 @@
           name: 'amount'
           value: @state.amount
           onChange: @handleChange
-      React.DOM.button
-        type: 'submit'
-        className: 'btn btn-primary'
-        disabled: !@valid()
-        'Create record'
+      React.DOM.div
+        className: 'form-group pad-l10'
+        React.DOM.button
+          type: 'submit'
+          className: 'btn btn-primary'
+          disabled: !@valid()
+          'Create record'

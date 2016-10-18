@@ -47,3 +47,4 @@ end
 
 gem 'bootstrap-sass'
 gem 'react-rails', '~> 1.0'
+gem 'toastr-rails'
