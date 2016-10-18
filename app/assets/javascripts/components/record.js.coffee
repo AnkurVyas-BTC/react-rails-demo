@@ -66,14 +66,18 @@
           defaultValue: @props.record.amount
           ref: 'amount'
       React.DOM.td null,
-        React.DOM.a
-          className: 'btn btn-default'
-          onClick: @handleEdit
-          'Update'
-        React.DOM.a
-          className: 'btn btn-danger'
-          onClick: @handleToggle
-          'Cancel'
+        React.DOM.span
+          className: 'form-group pad-l10'
+          React.DOM.a
+            className: 'btn btn-default'
+            onClick: @handleEdit
+            'Update'
+        React.DOM.span
+          className: 'form-group pad-l10'
+          React.DOM.a
+            className: 'btn btn-danger'
+            onClick: @handleToggle
+            'Cancel'
   render: ->
     if @state.edit
       @recordForm()
